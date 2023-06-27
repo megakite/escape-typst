@@ -5,14 +5,25 @@
 const defaultEscapes = {
   "{": "\\{",
   "}": "\\}",
-  "\\": "\\textbackslash{}",
   "#": "\\#",
-  $: "\\$",
-  "%": "\\%",
-  "&": "\\&",
-  "^": "\\textasciicircum{}",
-  _: "\\_",
-  "~": "\\textasciitilde{}",
+  "[": "\\[",
+  "]": "\\]",
+  "(": "\\(",
+  ")": "\\)",
+  "*": "\\*",
+  "_": "\\_",
+  "`": "\\`",
+  "<": "\\<",
+  ">": "\\>",
+  "@": "\\@",
+  "=": "\\=",
+  "-": "\\-",
+  "+": "\\+",
+  "/": "\\/",
+  "$": "\\$",
+  "\\": "\\\\",
+  "~": "\\~",
+  ".": "\\.",
 };
 const formatEscapes = {
   "\u2013": "\\--",
@@ -27,12 +38,12 @@ const defaultEscapeMapFn = (defaultEscapes, formatEscapes) =>
   Object.assign({}, defaultEscapes, formatEscapes);
 
 /**
- * Escape a string to be used in LaTeX documents.
+ * Escape a string to be used in Typst documents.
  * @param {string} str the string to be escaped.
  * @param {boolean} params.preserveFormatting whether formatting escapes should
  *  be performed (default: false).
  * @param {function} params.escapeMapFn the function to modify the escape maps.
- * @return {string} the escaped string, ready to be used in LaTeX.
+ * @return {string} the escaped string, ready to be used in Typst.
  */
 module.exports = function(
   str,
